@@ -1,0 +1,160 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9a43808a523c9ea4caa3104ac6a413daeb890dd9f673cde80f76c4f96e0ebdd7
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 0077a34e6cda072262b9480d09a32e52706f87934e1341ae40e4ea2c9a5f79ad
+Status: install ok installed
+
+Package: vcpkg-boost
+Version: 2025-03-29
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d9cf8a67ad9ac26ac0b812aa38e08cbb7aafe3905098527b78017bdb145c1518
+Status: install ok installed
+
+Package: boost-uninstall
+Version: 1.88.0
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5850c5408e4adc4308ebd9297fa0f4b775d303e53f73614f6b2b5995b38a9916
+Description: Internal vcpkg port used to uninstall Boost
+Status: install ok installed
+
+Package: boost-cmake
+Version: 1.88.0
+Depends: boost-uninstall, vcpkg-boost
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ef1955f5ea04e937bcfc9d387bef6988f0c81bb2c040d32de52548db407dd670
+Description: Boost cmake module
+Status: install ok installed
+
+Package: boost-headers
+Version: 1.88.0
+Depends: boost-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a66172f1d5b05485132e6fbceb6613e7fbe3abd5af8daf9e2b4207c6c43b0355
+Description: Boost headers module
+Status: install ok installed
+
+Package: boost-config
+Version: 1.88.0
+Depends: boost-cmake, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5ea698ba611cd7cbd7796102ba492b5212b97c0198513e4b85f6e5eb62c0eed9
+Description: Boost config module
+Status: install ok installed
+
+Package: boost-static-assert
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a5db5e5166285910dabb0d8616229e5a6e4f159dab4f1a5d9e420af47567cae6
+Description: Boost static_assert module
+Status: install ok installed
+
+Package: boost-type-traits
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers, boost-static-assert
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4635185cca62d3fe1c73bff442460088ee856621fffc584a93a8bf2286fc3f6a
+Description: Boost type_traits module
+Status: install ok installed
+
+Package: boost-assert
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a945d14cd2a93ea55face5461fe270d0ce890c17101e8b3fb8534f81598d52d2
+Description: Boost assert module
+Status: install ok installed
+
+Package: boost-throw-exception
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4368a9d98ef6cfc278324573f1629db3b8121fcf3f8487b8245bf66393458f1f
+Description: Boost throw_exception module
+Status: install ok installed
+
+Package: boost-uuid
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-throw-exception, boost-type-traits
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e1e31ae1c8f473a7b6bafe4f2af626f5aae2ab10b9dff900730836ded618899e
+Description: Boost uuid module
+Status: install ok installed
+
+Package: zlib
+Version: 1.3.1
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e616eb6d12a275ed3f7437df39e596bdc58f7df67946cb1a08158d16de5d39ca
+Description: A compression library
+Status: install ok installed
+
+Package: curl
+Version: 8.14.1
+Depends: vcpkg-cmake, vcpkg-cmake-config, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 291e59940a0c24d6365e28d16a32cd5ef377d6d226aa17e75a682fddacd941d1
+Description: A library for transferring data with URLs
+Default-Features: non-http, ssl
+Status: install ok installed
+
+Package: curl
+Feature: non-http
+Architecture: x64-windows
+Multi-Arch: same
+Description: Enables protocols beyond HTTP/HTTPS/HTTP2
+Status: install ok installed
+
+Package: curl
+Feature: schannel
+Depends: curl
+Architecture: x64-windows
+Multi-Arch: same
+Description: SSL support (Secure Channel)
+Status: install ok installed
+
+Package: curl
+Feature: ssl
+Depends: curl
+Architecture: x64-windows
+Multi-Arch: same
+Description: Default SSL backend
+Status: install ok installed
+
+Package: curl
+Feature: sspi
+Architecture: x64-windows
+Multi-Arch: same
+Description: SSPI support
+Status: install ok installed
+
+Package: nlohmann-json
+Version: 3.12.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 84f8c7a0c8fd466c7a2ab331bfb18645c7905573c476d82389a131c8bf844890
+Description: JSON for Modern C++
+Status: install ok installed
+
